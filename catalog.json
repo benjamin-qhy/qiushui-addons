@@ -31,7 +31,8 @@
       "install": {
         "kind": "tarball",
         "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-customer-support-demo-0.1.1.tgz"
-      }
+      },
+      "updatedAt": "2026-11-05"
     },
     {
       "slug": "export-timeline-pdf",
@@ -103,7 +104,7 @@
         "kind": "tarball",
         "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-observability-0.1.20.tgz"
       },
-      "updatedAt": "2026-09-21"
+      "updatedAt": "2026-11-05"
     },
     {
       "slug": "sample-addon",
@@ -131,7 +132,7 @@
         "kind": "tarball",
         "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-addon-0.1.14.tgz"
       },
-      "updatedAt": "2026-09-21"
+      "updatedAt": "2026-11-05"
     },
     {
       "slug": "settings-dialog-screenshot",
@@ -195,7 +196,7 @@
         "kind": "tarball",
         "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-vent-0.1.7.tgz"
       },
-      "updatedAt": "2026-09-21"
+      "updatedAt": "2026-11-05"
     }
   ]
 }
