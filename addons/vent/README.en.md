@@ -85,7 +85,7 @@ addons/vent/
 ├── package.json
 ├── index.ts
 ├── index.test.ts
-├── web/index.ts
+├── web/index.tsx
 ├── compat/extension-kv.ts
 ├── skills/vent/SKILL.md
 ├── vendor/pi-vent/LICENSE

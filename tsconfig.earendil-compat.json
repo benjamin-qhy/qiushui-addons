@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "jsx": "react",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "strict": true,
@@ -15,11 +16,16 @@
     ]
   },
   "include": [
+    "addons/customer-support-demo/**/*.ts",
+    "addons/customer-support-demo/**/*.tsx",
+    "addons/observability/**/*.tsx",
     "addons/export-timeline-pdf/**/*.ts",
     "addons/observability/**/*.ts",
     "addons/sample-addon/**/*.ts",
+    "addons/sample-addon/**/*.tsx",
     "addons/settings-dialog-screenshot/**/*.ts",
-    "addons/vent/**/*.ts"
+    "addons/vent/**/*.ts",
+    "addons/vent/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

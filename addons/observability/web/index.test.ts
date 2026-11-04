@@ -2,10 +2,12 @@ import { expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const source = readFileSync(join(import.meta.dir, "index.ts"), "utf8");
+const source = readFileSync(join(import.meta.dir, "index.tsx"), "utf8");
 
 test("observability web entry only registers the settings pane", () => {
-  expect(source).toContain("scheduleObservabilitySettingsPaneRegistration");
+  expect(source).toContain("registerSettingsPane");
+  expect(source).toContain("__qiushuiaiWeb");
+  expect(source).not.toMatch(/preact|htm`|__qiushuiaiPreact/i);
   expect(source).not.toContain("APP_INSIGHTS_SDK_URL");
   expect(source).not.toContain("browser-config");
   expect(source).not.toContain("EventSource");

@@ -14,7 +14,7 @@ Open **Settings → Add-Ons** and install **sample-addon** from the catalog.
 
 Registers a **Settings → Sample Addon** pane with:
 
-- browser-side UI in `web/index.ts`
+- browser-side React + shadcn UI in `web/index.tsx`
 - direct config reads/writes via `GET` / `POST /agent/addons/api/sample-addon/config`
 - no dependency on internal slash commands
 
@@ -123,7 +123,7 @@ No config files are written to disk.
 addons/sample-addon/
 ├── package.json          # Addon manifest
 ├── index.ts              # Extension entry: direct config API, KV config, keychain secret, test tool
-├── web/index.ts          # Settings pane: checkbox, text, password, keychain save
+├── web/index.tsx         # React + shadcn settings pane
 ├── web/styles.ts         # Pane-scoped older-host fallback styles
 ├── compat/extension-kv.ts # KV store compat shim (copy to your addon)
 ├── tests/                # Gherkin UX tests and Playwright step definitions
@@ -133,7 +133,7 @@ addons/sample-addon/
 ## Using as a template
 
 1. Copy this directory to `addons/your-addon/`
-2. Rename `sample-addon` → `your-addon` in `package.json`, `index.ts`, and `web/index.ts`
+2. Rename `sample-addon` → `your-addon` in `package.json`, `index.ts`, and `web/index.tsx`
 3. Replace the greeting field with your config
 4. Replace the secret keychain entry name
 5. Replace the test tool with your tool

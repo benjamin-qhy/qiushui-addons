@@ -24,7 +24,7 @@ https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-
 ## 提供的能力
 
 - 入口：`index.ts`
-- 入口：`web/index.ts`
+- 入口：`web/index.tsx`（React + shadcn）
 
 ## 配置与安全
 

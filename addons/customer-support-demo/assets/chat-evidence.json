@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-21",
+  "model": "openai-codex/gpt-5.5",
+  "source": "Selected fields from real native session toolResult records; no credentials",
+  "sessions": [
+    {
+      "id": "web:branch-1b539487-ec1d-4cac-af15-60c6b4977272",
+      "actions": ["create", "get", "update", "list", "summary", "runtime_status", "report", "get", "close", "summary"],
+      "sessionCalls": [1,2,3,4,5,6,7,8,9,10],
+      "created": {"id":"CS-0001","category":"account","priority":"urgent","assignee":"验收客服","createdAt":"2026-09-21T15:17:54.389Z","slaDeadline":"2026-09-21T18:17:54.389Z"},
+      "closedStats": {"total":1,"open":0,"inProgress":0,"waiting":0,"resolved":1,"urgent":0,"overdue":0},
+      "disabledAttempt": {"isError":true,"message":"客户工单助手已在设置中停用，请先启用后再操作。Customer support assistant is disabled."}
+    },
+    {
+      "id":"web:branch-98f73896-d926-43ee-b751-418ca912dd5b",
+      "actions":["list","reset_demo","seed_demo","summary","runtime_status"],
+      "sessionCalls":[1,2,3,4,5],
+      "resetTotal":0,
+      "seedStats":{"total":4,"open":1,"inProgress":1,"waiting":1,"resolved":1,"urgent":1,"overdue":0}
+    },
+    {
+      "id":"web:branch-97b3edb5-127a-4b6e-bfbb-ed9ab9099c53",
+      "actions":["get","summary"],
+      "sessionCalls":[1,2],
+      "ticket":{"id":"CS-0003","status":"in_progress","assignee":"小秋","updatedAt":"2026-09-21T15:28:36.473Z"},
+      "stats":{"total":4,"open":0,"inProgress":2,"waiting":1,"resolved":1,"urgent":1,"overdue":0}
+    }
+  ]
+}

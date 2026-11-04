@@ -3,7 +3,7 @@ import { settingsBrowserEnabled, settingsPaneFixture } from "../../scripts/lib/s
 
 const browserTest = settingsBrowserEnabled ? test : test.skip;
 let fixture: Awaited<ReturnType<typeof settingsPaneFixture>>;
-beforeAll(async () => { if (settingsBrowserEnabled) fixture = await settingsPaneFixture(new URL("./web/index.ts", import.meta.url).pathname); });
+beforeAll(async () => { if (settingsBrowserEnabled) fixture = await settingsPaneFixture(new URL("./web/index.tsx", import.meta.url).pathname); });
 afterAll(async () => { await fixture?.close(); });
 
 for (const skin of ["classic", "visual", "legacy"]) {

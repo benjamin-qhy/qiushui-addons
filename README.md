@@ -39,9 +39,10 @@ bun add https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon
 
 请按以下方式划分职责：
 
-- **浏览器面板（`web/index.ts`）**
-  - 使用 `globalThis.__qiushuiaiSettingsPaneRegistry` / `globalThis.__qiushuiai_web?.registerSettingsPane` 注册面板
-  - 使用 `globalThis.__qiushuiaiPreactHtm` / `globalThis.__qiushuiaiPreact`
+- **浏览器面板（`web/index.tsx`）**
+  - 使用 `globalThis.__qiushuiaiWeb.registerSettingsPane(...)` 注册 React 面板
+  - React 与 shadcn/Base UI 组件由 `globalThis.__qiushuiaiWeb` 提供，技术架构与 QiushuiAI 前端一致
+  - 禁止使用 Preact、HTM、旧设置面板注册器或自行复制一套基础组件
   - 通过 `GET` / `POST /agent/addons/api/<addon>/<action>` 读写非敏感配置；`config` 是常用的设置操作
   - 通过 `GET` / `POST /agent/keychain` 存储密钥
 - **运行时入口（`index.ts` / `extension.ts`）**
@@ -62,13 +63,14 @@ bun add https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon
 
 ## 可用插件
 
-当前仅保留以下 5 个插件，其余插件已从本仓库工作版本移除。
+当前仅保留以下 6 个插件，其余插件已从本仓库工作版本移除。
 
 | 插件 | 技术标识 | 说明 |
 |---|---|---|
 | [导出时间线 PDF](addons/export-timeline-pdf/) | `export-timeline-pdf` | 将聊天时间线导出为 PDF，并保留头像和引用消息标记 |
 | [可观测性](addons/observability/) | `observability` | 通过 OpenTelemetry 将错误和智能体轮次追踪到 Azure Application Insights 和本地 Graphite |
 | [插件示例](addons/sample-addon/) | `sample-addon` | 展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板 |
+| [客户工单助手（示例）](addons/customer-support-demo/) | `customer-support-demo` | 用真实聊天与工单工作台，演示工具、Skill、设置、KV、Keychain 和 Runtime；附验收记录 |
 | [设置截图](addons/settings-dialog-screenshot/) | `settings-dialog-screenshot` | 用于截取 Pi Web 设置对话框紧凑画面的开发技能 |
 | [工作区反馈日志](addons/vent/) | `vent` | 将可配置的工作区反馈日志能力集成到 QiushuiAI |
 
