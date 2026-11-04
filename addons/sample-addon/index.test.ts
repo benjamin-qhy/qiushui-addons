@@ -15,16 +15,17 @@ test("sample compat storage avoids runtime source imports", () => {
 });
 
 test("sample settings uses labelled host controls with scoped older-host fallback", () => {
-  const source = readFileSync(join(import.meta.dir, "web/index.ts"), "utf8");
+  const source = readFileSync(join(import.meta.dir, "web/index.tsx"), "utf8");
   const css = readFileSync(join(import.meta.dir, "web/styles.ts"), "utf8");
-  expect(source).toContain('class="sample-addon-settings"');
-  expect(source).toContain('for="sample-addon-api-key"');
+  expect(source).toContain('className="sample-addon-settings"');
+  expect(source).toContain('htmlFor="sample-addon-api-key"');
   expect(source).toContain('aria-describedby="sample-addon-api-key-help"');
-  expect(source).toContain('class="settings-addon-control-group"');
+  expect(source).toContain('className="settings-addon-control-group"');
   expect(source).not.toContain('148px');
   expect(css).toContain('@layer sample-addon-settings-fallback');
   expect(source).toContain('from "./styles.ts"');
-  expect(source).toContain('parentElement?.querySelector?.(\'input[type="password"]\')');
+  expect(source).toContain("__qiushuiaiWeb");
+  expect(source).not.toMatch(/preact|htm`|__qiushuiaiPreact/i);
 });
 
 test("sample browser acceptance steps never write through API fallbacks", () => {

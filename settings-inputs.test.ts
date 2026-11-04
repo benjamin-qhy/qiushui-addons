@@ -3,7 +3,7 @@ import { readFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { isAbsolute, join } from 'node:path';
 import { settingsBrowserEnabled, settingsPaneFixture } from './scripts/lib/settings-pane-browser.js';
 
-export const panes = ['observability','sample-addon','vent'];
+export const panes = ['customer-support-demo','observability','sample-addon','vent'];
 const textControls='input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="file"]):not([type="range"]):not([type="color"]),textarea,select';
 const browserTest=settingsBrowserEnabled?test:test.skip;
 const fixtures=new Map<string,Awaited<ReturnType<typeof settingsPaneFixture>>>();
@@ -11,7 +11,7 @@ afterAll(async()=>{for(const fixture of fixtures.values())await fixture.close();
 
 test('every registered first-party Settings pane is in the input audit',()=>{
  const discovered=readdirSync(join(import.meta.dir,'addons')).filter(slug=>{
-  const p=join(import.meta.dir,'addons',slug,'web/index.ts');return existsSync(p)&&readFileSync(p,'utf8').includes('registerSettingsPane');
+  const p=join(import.meta.dir,'addons',slug,'web/index.tsx');return existsSync(p)&&readFileSync(p,'utf8').includes('registerSettingsPane');
  }).sort();
  expect(discovered).toEqual([...panes].sort());
 });
@@ -19,7 +19,7 @@ test('every registered first-party Settings pane is in the input audit',()=>{
 test('new package-local styling imports use exact browser asset filenames',()=>{
  for(const slug of panes){
   const p=join(import.meta.dir,'addons',slug,'web');
-  const source=readFileSync(join(p,'index.ts'),'utf8');
+  const source=readFileSync(join(p,'index.tsx'),'utf8');
   for(const match of source.matchAll(/from ["'](\.\/[^"']+)["']/g))expect(existsSync(join(p,match[1]))).toBe(true);
  }
 });
@@ -34,6 +34,7 @@ function dataFor(slug:string):any {
  case 'linkr':return {profiles:[{id:'device',label:'Fixture device',origin:'https://device.invalid',targetIdentity:'Fixture computer',tokenKeychain:'linkr/test-key',inputEnabled:false}]};
  case 'remote-peer':return {config:{enabled:false,instanceName:'Fixture',relays:[],relayMode:'disabled'},identity:{clientId:'PCL1-fixture'},transport:{active:false},discovery:{active:false},candidates:[],peers:[],advertised:[],messages:[],work:[],localAgents:[]};
  case 'sample-addon':return {enabled:false,greeting:'Fixture greeting',secret_keychain:'sample-addon/api-key'};
+ case 'customer-support-demo':return {ok:true,config:{enabled:true,teamName:'Fixture support',defaultAssignee:'Fixture agent',normalSlaHours:24,highSlaHours:8,urgentSlaHours:2,crmSecretKeychain:'customer-support-demo/crm-token'},tickets:[],activities:[],stats:{total:0,open:0,inProgress:0,waiting:0,resolved:0,urgent:0,overdue:0}};
  case 'observability':return {enabled:false,instance_name:'Fixture',connection_string_keychain:'azure/appinsights-connection-string',sample_rate:1,graphite_host:'graphite.invalid',graphite_port:2003,graphite_interval_seconds:60,graphite_instance:'fixture'};
  case 'portainer':return {host:'portainer.invalid',api_token_keychain:'portainer/test',allow_insecure_tls:false};
  case 'proxmox':return {host:'proxmox.invalid',username:'root@pam',api_token_keychain:'proxmox/test',allow_insecure_tls:false};
@@ -45,7 +46,7 @@ function dataFor(slug:string):any {
 async function open(slug:string,skin:string,width:number,theme:'light'|'dark'='light'){
  if(!fixtures.has(slug)){
   for(const f of fixtures.values())await f.close();fixtures.clear();
-  fixtures.set(slug,await settingsPaneFixture(join(import.meta.dir,`addons/${slug}/web/index.ts`),{realHost:true}));
+  fixtures.set(slug,await settingsPaneFixture(join(import.meta.dir,`addons/${slug}/web/index.tsx`),{realHost:true}));
  }
  const f=await fixtures.get(slug)!.page(skin,width,theme);const requests:any[]=[];let data=dataFor(slug);
  await f.page.route('**/agent/**',async(route:any)=>{

@@ -1,0 +1,74 @@
+{
+  "name": "@qiushuiai/qiushuiai-addon-customer-support-demo",
+  "version": "0.1.1",
+  "description": "用虚拟客户工单展示 QiushuiAI Add-on 的工具、技能、可视化面板、KV、钥匙串和 Runtime 能力",
+  "type": "module",
+  "main": "index.ts",
+  "pi": {
+    "extensions": [
+      "index.ts"
+    ],
+    "web": {
+      "entries": [
+        "web/index.tsx"
+      ]
+    },
+    "runtime": {
+      "entries": [
+        "runtime/index.ts"
+      ],
+      "load": "lazy"
+    },
+    "skills": [
+      "skills"
+    ]
+  },
+  "agents": {
+    "skills": [
+      {
+        "name": "customer-support-workflow",
+        "path": "./skills/customer-support-workflow"
+      }
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "keywords": [
+    "customer-support",
+    "demo",
+    "pi-package",
+    "qiushuiai",
+    "qiushuiai-addon",
+    "ticket"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/benjamin-qhy/qiushuiai-addons/tree/main/addons/customer-support-demo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benjamin-qhy/qiushuiai-addons.git",
+    "directory": "addons/customer-support-demo"
+  },
+  "qiushuiai": {
+    "displayName": "客户工单助手（示例）",
+    "type": "extension",
+    "compatibleVersions": ">=3.0.0",
+    "categories": [
+      "customer-support",
+      "demo",
+      "developer",
+      "ticket"
+    ],
+    "displayTags": [
+      "客服",
+      "工单",
+      "业务示例",
+      "开发参考"
+    ],
+    "featured": false,
+    "skills": [
+      "skills/customer-support-workflow"
+    ]
+  }
+}

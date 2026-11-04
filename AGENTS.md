@@ -108,7 +108,7 @@ export default function myAddon(pi: ExtensionAPI) {
   "pi": {
     "extensions": ["index.ts"],
     "web": {
-      "entries": ["web/index.ts"]
+      "entries": ["web/index.tsx"]
     },
     "skills": ["skills"]
   },
@@ -204,6 +204,12 @@ kv.set("prefs", value, "global");            // 跨聊天共享
 
 ### 设置面板与直接配置 API
 
+**入口分工：**插件介绍弹窗只显示介绍和跳转按钮。`registerSettingsPane` 挂在独立设置导航；`registerWorkspacePane` 挂在聊天旁的工作区。业务看板不是设置页。使用 `customer-support-demo` 作为这三类入口与真实聊天协作的开发参考。
+
+**真实验收：**业务型示例必须在隔离实例的真实聊天中触发 Skill 和工具，并核对落盘状态、页面同步及停用保护；安装、API 200 或模拟测试不能单独证明可用。当前宿主 KV 采用白名单声明，新存储必须同步登记；会话 KV 使用宿主 chatJid。
+
+**本地开发：**`bun run addon:dev <slug> --home <隔离HOME>` 安装源码快照，不公开发布。修改后重跑并重启实例。旧安装移至 `system/addons/dev-backups/`，不放在会被扫描加载的 `node_modules` 中。源码软链接不作为可运行的任务插件安装方式。
+
 对于提供**设置**面板的附加组件：
 
 #### 运行时端
@@ -224,11 +230,14 @@ registerAddonConfigApi?.("my-addon", "config", {
 
 #### 浏览器端
 
-使用 qiushuiai 提供的浏览器全局对象，并请求经过身份验证的本地配置 API：
+使用 QiushuiAI 提供的 React + shadcn Web 宿主，并请求经过身份验证的本地配置 API：
 
 ```ts
+const { React, components, registerSettingsPane } = globalThis.__qiushuiaiWeb;
+const { Button, Input, Switch } = components;
 const API = "/agent/addons/api/my-addon";
-const preactHtm = globalThis.__qiushuiaiPreactHtm || globalThis.__qiushuiaiPreact;
+
+registerSettingsPane({ id: "my-addon", label: "My Add-on", component: MyAddonSettings });
 
 await fetch(`${API}/config`);
 await fetch(`${API}/config`, {
@@ -305,7 +314,7 @@ bun run check:catalog
 1. `validate-metadata` 会在拉取请求和推送到 `main` 时运行；它会检查生成的元数据和 Earendil 兼容性。
 2. 附加组件或目录脚本发生变更后，`sync-catalog` 会在 `main` 上运行，并可能同时更新 `catalog.json` 和根目录的 `package.json`。
 3. 附加组件、目录、资源或构建发生变更后，`build + deploy` 会在 `main` 上运行，并发布 GitHub Pages 网站和公开的 `.tgz` 文件。
-4. Pages 构建会校验并发布当前保留的 5 个公开 tarball；仓库不使用 GitHub Packages。
+4. Pages 构建会校验并发布当前保留的 6 个公开 tarball；仓库不使用 GitHub Packages。
 
 ### 手动同步
 
@@ -333,6 +342,9 @@ bun run check:catalog   # 只验证（不同步时以状态码 1 退出）
 - 绝不从 qiushuiai 运行时内部模块导入
 - `lib/compat/` 仅供仓库内开发使用——已发布的软件包必须内置自身所需的所有兼容层
 - 浏览器端设置面板必须使用**直接的后端附加组件配置 API**（`/agent/addons/api/<addon>/<action>`），密钥仍应通过 `/agent/keychain` 处理
+- Add-on Web 入口统一使用 TypeScript/TSX、React 和宿主提供的 shadcn/Base UI 组件，技术架构与 QiushuiAI `client/` 保持一致
+- 严禁新增或继续使用 Preact、HTM、`__qiushuiaiPreactHtm`、`__qiushuiaiPreact`、`__qiushuiaiSettingsPaneRegistry` 或 `__qiushuiai_web`；旧面板修改时必须迁移到 `globalThis.__qiushuiaiWeb`
+- 不得在 Add-on 中复制 shadcn 基础组件源码；使用 `globalThis.__qiushuiaiWeb.components` 暴露的宿主组件。缺少所需组件时先扩展宿主契约并补测试
 - 运行时端的设置和配置处理器应在模块加载时通过 `globalThis.__qiushuiai_registerAddonConfigApi(...)` 注册，使 Web 面板不依赖斜杠命令
 - v3 不提供旧版斜杠命令配置桥接；禁止依赖 `/addon-config-get` / `/addon-config-set`
 - 设置面板附加组件的界面发生实质性变化时，应至少包含一张从 microVM 测试实例截取并提交到 README 的截图
@@ -359,4 +371,4 @@ bun run check:catalog   # 只验证（不同步时以状态码 1 退出）
 
 ## 当前维护范围
 
-仅保留 sample-addon、observability、settings-dialog-screenshot、export-timeline-pdf、vent。其余插件已移除，未经用户要求不要恢复或继续其开发测试。
+仅保留 sample-addon、customer-support-demo、observability、settings-dialog-screenshot、export-timeline-pdf、vent。其余插件已移除，未经用户要求不要恢复或继续其开发测试。

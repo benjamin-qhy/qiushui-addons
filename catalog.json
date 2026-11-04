@@ -3,6 +3,37 @@
   "source": "github:benjamin-qhy/qiushuiai-addons",
   "addons": [
     {
+      "slug": "customer-support-demo",
+      "name": "@qiushuiai/qiushuiai-addon-customer-support-demo",
+      "displayName": "客户工单助手（示例）",
+      "version": "0.1.1",
+      "type": "extension",
+      "description": "用虚拟客户工单展示 QiushuiAI Add-on 的工具、技能、可视化面板、KV、钥匙串和 Runtime 能力",
+      "path": "addons/customer-support-demo",
+      "homepage": "https://github.com/benjamin-qhy/qiushuiai-addons/tree/main/addons/customer-support-demo",
+      "categories": [
+        "customer-support",
+        "demo",
+        "developer",
+        "ticket"
+      ],
+      "displayTags": [
+        "业务示例",
+        "客服",
+        "工单",
+        "开发参考"
+      ],
+      "featured": false,
+      "compatibleVersions": ">=3.0.0",
+      "skills": [
+        "customer-support-workflow"
+      ],
+      "install": {
+        "kind": "tarball",
+        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-customer-support-demo-0.1.1.tgz"
+      }
+    },
+    {
       "slug": "export-timeline-pdf",
       "name": "@qiushuiai/qiushuiai-addon-export-timeline-pdf",
       "displayName": "导出时间线 PDF",
@@ -36,7 +67,7 @@
       "slug": "observability",
       "name": "@qiushuiai/qiushuiai-addon-observability",
       "displayName": "可观测性",
-      "version": "0.1.19",
+      "version": "0.1.20",
       "type": "extension",
       "description": "通过 OpenTelemetry 将错误和智能体轮次追踪到 Azure Application Insights 和本地 Graphite",
       "path": "addons/observability",
@@ -70,7 +101,7 @@
       ],
       "install": {
         "kind": "tarball",
-        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-observability-0.1.19.tgz"
+        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-observability-0.1.20.tgz"
       },
       "updatedAt": "2026-09-21"
     },
@@ -78,7 +109,7 @@
       "slug": "sample-addon",
       "name": "@qiushuiai/qiushuiai-addon-sample-addon",
       "displayName": "插件示例",
-      "version": "0.1.13",
+      "version": "0.1.14",
       "type": "extension",
       "description": "展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板",
       "path": "addons/sample-addon",
@@ -98,7 +129,7 @@
       "skills": [],
       "install": {
         "kind": "tarball",
-        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-addon-0.1.13.tgz"
+        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-addon-0.1.14.tgz"
       },
       "updatedAt": "2026-09-21"
     },
@@ -138,7 +169,7 @@
       "slug": "vent",
       "name": "@qiushuiai/qiushuiai-addon-vent",
       "displayName": "工作区反馈日志",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "type": "extension",
       "description": "将可配置的工作区反馈日志能力集成到 QiushuiAI",
       "path": "addons/vent",
@@ -162,7 +193,7 @@
       "skills": [],
       "install": {
         "kind": "tarball",
-        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-vent-0.1.6.tgz"
+        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-vent-0.1.7.tgz"
       },
       "updatedAt": "2026-09-21"
     }

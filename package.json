@@ -11,11 +11,14 @@
   ],
   "type": "module",
   "scripts": {
+    "addon:dev": "bun scripts/addon-dev.ts",
+    "addon:verify": "bun scripts/addon-verify.ts",
     "sync:catalog": "bun scripts/sync-catalog.ts --write",
     "check:catalog": "bun scripts/sync-catalog.ts --check",
     "audit:brand": "bun scripts/audit-brand.ts",
+    "audit:web-architecture": "bun test web-architecture.test.ts",
     "typecheck:earendil-compat": "tsc --noEmit -p tsconfig.earendil-compat.json",
-    "test:earendil-compat": "bun test addons/observability addons/sample-addon addons/vent",
+    "test:earendil-compat": "bun test addons/customer-support-demo addons/observability addons/sample-addon addons/vent",
     "addon:e2e": "cd tests/addon-e2e && bun run test -- --project=desktop-chrome",
     "addon:e2e:all": "cd tests/addon-e2e && QIUSHUIAI_ADDON=all bun run test -- --project=desktop-chrome",
     "addon:e2e:report": "cd tests/addon-e2e && bun run report"
@@ -26,11 +29,13 @@
   },
   "pi": {
     "extensions": [
+      "addons/customer-support-demo/index.ts",
       "addons/observability/index.ts",
       "addons/sample-addon/index.ts",
       "addons/vent/index.ts"
     ],
     "skills": [
+      "addons/customer-support-demo/skills",
       "addons/export-timeline-pdf/skills",
       "addons/observability/skills",
       "addons/settings-dialog-screenshot/skills",
@@ -39,6 +44,10 @@
   },
   "agents": {
     "skills": [
+      {
+        "name": "customer-support-workflow",
+        "path": "./addons/customer-support-demo/skills/customer-support-workflow"
+      },
       {
         "name": "export-timeline-pdf",
         "path": "./addons/export-timeline-pdf/skills/export-timeline-pdf"
@@ -80,6 +89,7 @@
     "@number0/iroh": "1.1.0",
     "@opentelemetry/api": "^1.9",
     "@opentelemetry/resources": "^2.10.0",
+    "@types/react": "19",
     "bonjour-service": "1.4.4",
     "bun-types": "1.4.1",
     "jose": "6.2.12",
