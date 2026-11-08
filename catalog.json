@@ -38,7 +38,7 @@
       "slug": "customer-support-isolated",
       "name": "@qiushuiai/qiushuiai-addon-customer-support-isolated",
       "displayName": "客户工单",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "type": "extension",
       "description": "独立实例的客户工单管理与可视化看板",
       "path": "addons/customer-support-isolated",
@@ -54,7 +54,7 @@
       "skills": [],
       "install": {
         "kind": "tarball",
-        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-customer-support-isolated-1.0.2.tgz"
+        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-customer-support-isolated-1.0.3.tgz"
       },
       "updatedAt": "2026-11-08"
     },
@@ -194,7 +194,7 @@
       "slug": "vent",
       "name": "@qiushuiai/qiushuiai-addon-vent",
       "displayName": "工作区反馈日志",
-      "version": "0.1.8",
+      "version": "0.1.9",
       "type": "extension",
       "description": "将可配置的工作区反馈日志能力集成到 QiushuiAI",
       "path": "addons/vent",
@@ -218,7 +218,7 @@
       "skills": [],
       "install": {
         "kind": "tarball",
-        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-vent-0.1.8.tgz"
+        "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-vent-0.1.9.tgz"
       },
       "updatedAt": "2026-11-08"
     }

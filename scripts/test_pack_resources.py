@@ -30,6 +30,10 @@ class ResourcePackaging(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Forbidden'):
             module.build(self.root, self.root / 'output')
 
+    def test_gzip_header_is_platform_independent(self):
+        _, packed = module.package(self.skill, 'skills')
+        self.assertEqual(packed[:10], bytes.fromhex('1f8b08000000000002ff'))
+
     def test_rejects_runtime_data_before_writing(self):
         (self.skill / 'memory').mkdir()
         with self.assertRaisesRegex(ValueError, 'Forbidden'):

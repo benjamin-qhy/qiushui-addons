@@ -54,7 +54,13 @@ def package(directory, kind):
             info.mode = 0o755 if path.stat().st_mode & 0o111 else 0o644
             info.mtime = 0
             archive.addfile(info, io.BytesIO(data))
-    packed = gzip.compress(raw.getvalue(), mtime=0)
+    # gzip.compress(mtime=0) delegates its OS byte to zlib on Python 3.11/12,
+    # producing different checksums on macOS and Linux. GzipFile consistently
+    # writes OS=unknown; pin the compression level as well.
+    compressed = io.BytesIO()
+    with gzip.GzipFile(filename='', mode='wb', fileobj=compressed, compresslevel=9, mtime=0) as stream:
+        stream.write(raw.getvalue())
+    packed = compressed.getvalue()
     return f'haiqiai-{kind}-{slug}-{version}.tgz', packed
 
 def build(root, output):
