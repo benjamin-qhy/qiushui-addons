@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1a96e-6431-7000-a1a7-21e44614dbcb",
+  "name": "王战",
+  "role": "网站开发",
+  "description": "官网、落地页、展示网站、响应式布局与上线维护",
+  "storage_slug": "wang-zhan",
+  "status": "enabled",
+  "is_default": 0,
+  "avatar": "avatar.jpg",
+  "created_at": "2026-11-05T01:59:06.545Z",
+  "updated_at": "2026-11-05T01:59:06.545Z",
+  "suggestedTasks": [
+    "请王战帮我处理官网"
+  ]
+}

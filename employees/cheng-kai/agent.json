@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1a96e-63a5-7000-9519-2c219921fa68",
+  "name": "程开",
+  "role": "全栈开发",
+  "description": "产品功能、前后端开发、数据库、测试和故障排查",
+  "storage_slug": "cheng-kai",
+  "status": "enabled",
+  "is_default": 0,
+  "avatar": "avatar.jpg",
+  "created_at": "2026-11-05T01:59:06.405Z",
+  "updated_at": "2026-11-05T01:59:06.405Z",
+  "suggestedTasks": [
+    "请程开帮我处理产品功能"
+  ]
+}

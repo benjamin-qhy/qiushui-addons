@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1a96e-651b-7000-b00a-21de5fe5b38c",
+  "name": "苏菲",
+  "role": "个人助手",
+  "description": "个人日程、生活安排、资料查找与日常事务协助",
+  "storage_slug": "sophie",
+  "status": "enabled",
+  "is_default": 0,
+  "avatar": "avatar.jpg",
+  "created_at": "2026-11-05T01:59:06.779Z",
+  "updated_at": "2026-11-05T01:59:06.779Z",
+  "suggestedTasks": [
+    "请苏菲帮我处理个人日程"
+  ]
+}

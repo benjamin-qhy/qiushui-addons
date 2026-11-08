@@ -144,12 +144,12 @@ export function catalogEntryFromManifest(
   };
 }
 
-export function validateCatalog(catalog: QiushuiAIAddonCatalog, expectedCount = 6): void {
+export function validateCatalog(catalog: QiushuiAIAddonCatalog, expectedCount?: number): void {
   if (catalog.version !== 3) throw new Error('catalog version must be 3');
   if (catalog.source !== QIUSHUIAI_ADDON_SOURCE) {
     throw new Error(`catalog source must be ${QIUSHUIAI_ADDON_SOURCE}`);
   }
-  if (catalog.addons.length !== expectedCount) {
+  if (expectedCount !== undefined && catalog.addons.length !== expectedCount) {
     throw new Error(`catalog must contain exactly ${expectedCount} add-ons`);
   }
 

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1a96e-646c-7000-a373-77a016a7f573",
+  "name": "梅颖",
+  "role": "自媒体运营",
+  "description": "选题、文案、图文与视频脚本、发布准备和数据复盘",
+  "storage_slug": "mei-ying",
+  "status": "enabled",
+  "is_default": 0,
+  "avatar": "avatar.jpg",
+  "created_at": "2026-11-05T01:59:06.604Z",
+  "updated_at": "2026-11-05T01:59:06.604Z",
+  "suggestedTasks": [
+    "请梅颖帮我处理选题"
+  ]
+}

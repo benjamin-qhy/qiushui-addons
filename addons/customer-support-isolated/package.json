@@ -1,0 +1,39 @@
+{
+  "name": "@qiushuiai/qiushuiai-addon-customer-support-isolated",
+  "version": "1.0.3",
+  "type": "module",
+  "license": "MIT",
+  "pi": {
+    "runtime": {
+      "load": "lazy"
+    },
+    "web": {
+      "entries": [
+        "web.tsx"
+      ]
+    },
+    "isolation": {
+      "version": 1,
+      "entry": "instance.ts",
+      "webEntry": "web.tsx"
+    }
+  },
+  "description": "独立实例的客户工单管理与可视化看板",
+  "qiushuiai": {
+    "displayName": "客户工单",
+    "type": "extension",
+    "compatibleVersions": ">=3.0.0",
+    "categories": [
+      "customer-support"
+    ],
+    "displayTags": [
+      "客服",
+      "工单"
+    ],
+    "featured": false
+  },
+  "keywords": [
+    "qiushuiai-addon",
+    "customer-support"
+  ]
+}

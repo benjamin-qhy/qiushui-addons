@@ -6,7 +6,7 @@
 
 ## 快速开始
 
-> **安装路径规则：**第一方 `qiushuiai-addons` 必须通过 `catalog.json` 中**由 GitHub 公开托管的 tarball URL** 安装。
+> **安装路径规则：**第一方资源使用**由 GitHub 公开托管的 tarball URL** 安装。新版五类精选展示数据仅维护在海奇网站 `site/catalogs/*.json`；本仓库旧 `catalog.json` 保持兼容目录契约，具体源文件分类见 RESOURCE-LAYOUT.md。
 > **不要**将文档、生成的目录条目或运行时集成改回 npmjs.org 软件包说明，或改为通过身份验证读取 GitHub Packages。
 > 运行时安装和移除必须始终无需身份验证。
 
@@ -314,7 +314,7 @@ bun run check:catalog
 1. `validate-metadata` 会在拉取请求和推送到 `main` 时运行；它会检查生成的元数据和 Earendil 兼容性。
 2. 附加组件或目录脚本发生变更后，`sync-catalog` 会在 `main` 上运行，并可能同时更新 `catalog.json` 和根目录的 `package.json`。
 3. 附加组件、目录、资源或构建发生变更后，`build + deploy` 会在 `main` 上运行，并发布 GitHub Pages 网站和公开的 `.tgz` 文件。
-4. Pages 构建会校验并发布当前保留的 6 个公开 tarball；仓库不使用 GitHub Packages。
+4. Pages 构建会校验并发布当前 catalog 中各 Add-on 及 resource.json 声明的公开资源包；仓库不使用 GitHub Packages。
 
 ### 手动同步
 
@@ -371,4 +371,4 @@ bun run check:catalog   # 只验证（不同步时以状态码 1 退出）
 
 ## 当前维护范围
 
-仅保留 sample-addon、customer-support-demo、observability、settings-dialog-screenshot、export-timeline-pdf、vent。其余插件已移除，未经用户要求不要恢复或继续其开发测试。
+Add-on 维护 sample-addon、customer-support-demo、customer-support-isolated、observability、settings-dialog-screenshot、export-timeline-pdf、vent；另按 RESOURCE-LAYOUT.md 维护用户确认的 Skills、MCP、员工、Pi 扩展和飞书连接器。其余插件已移除，未经用户要求不要恢复或继续其开发测试。

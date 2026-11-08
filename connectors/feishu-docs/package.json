@@ -1,0 +1,52 @@
+{
+  "name": "@haiqiai/feishu-docs",
+  "version": "1.0.2",
+  "type": "module",
+  "pi": {
+    "connectors": [
+      {
+        "id": "feishu-docs",
+        "name": "飞书文档",
+        "authentication": "web-authorization",
+        "execution": "cli",
+        "actions": [
+          "fetch",
+          "append",
+          "create"
+        ],
+        "entry": "adapter.js",
+        "tools": [
+          {
+            "name": "connector_feishu_docs__fetch",
+            "action": "fetch",
+            "effect": "read",
+            "description": "Fetch a Feishu document with the connected account.",
+            "inputs": {
+              "url": "Full Feishu /docx/ document URL"
+            }
+          },
+          {
+            "name": "connector_feishu_docs__append",
+            "action": "append",
+            "effect": "mutation",
+            "description": "Append a Feishu document with the connected account.",
+            "inputs": {
+              "url": "Full Feishu /docx/ document URL",
+              "content": "Markdown text to write"
+            }
+          },
+          {
+            "name": "connector_feishu_docs__create",
+            "action": "create",
+            "effect": "mutation",
+            "description": "Create a Feishu document with the connected account.",
+            "inputs": {
+              "content": "Markdown text to write",
+              "title": "Document title"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

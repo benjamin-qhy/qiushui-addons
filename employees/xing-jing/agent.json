@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1a96e-64e1-7000-88fb-9d92e5d327af",
+  "name": "邢婧",
+  "role": "行政助手",
+  "description": "会议纪要、公司资料整理、工作安排与事项跟进",
+  "storage_slug": "xing-jing",
+  "status": "enabled",
+  "is_default": 0,
+  "avatar": "avatar.jpg",
+  "created_at": "2026-11-05T01:59:06.721Z",
+  "updated_at": "2026-11-05T01:59:06.721Z",
+  "suggestedTasks": [
+    "请邢婧帮我处理会议纪要"
+  ]
+}
