@@ -11,7 +11,7 @@ import { dirname, isAbsolute, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
-import { Type } from "typebox";
+import type { TSchema } from "typebox";
 
 import { createExtensionStorage, type ExtensionStorage } from "./compat/extension-kv.js";
 
@@ -28,14 +28,13 @@ const DEFAULT_CONFIG: VentConfig = {
   output_path: DEFAULT_OUTPUT_PATH,
 };
 
-const ventSchema = Type.Object({
-  thought: Type.String({
-    description: "Your candid feedback, frustration, confusion, or postmortem note.",
-  }),
-  trigger: Type.Optional(Type.String({
-    description: "Short label for what triggered this vent, e.g. tool_error, bad_docs, confusing_task.",
-  })),
-}, { additionalProperties: false });
+const ventSchema = {
+  type: "object", properties: {
+    thought: { type: "string", description: "Specific feedback about a major issue." },
+    trigger: { type: "string", description: "Short label for what triggered the feedback." },
+  }, required: ["thought"], additionalProperties: false,
+} as unknown as TSchema;
+
 
 let kvStore: ExtensionStorage | null = null;
 const fileMutationQueues = new Map<string, Promise<unknown>>();
@@ -221,7 +220,7 @@ export default function ventExtension(pi: ExtensionAPI): void {
     ],
     parameters: ventSchema,
     executionMode: "sequential",
-    async execute(_toolCallId, params, _signal, _onUpdate, ctx) {
+    async execute(_toolCallId, params: {thought: string; trigger?: string}, _signal, _onUpdate, ctx) {
       const thought = clean(params.thought);
       if (!thought) throw new Error("vent.thought must not be empty");
 

@@ -12,10 +12,23 @@ on:
       - 'scripts/prepare-published-addon.ts'
       - '.github/workflows/build.yml'
       - 'assets/**'
+      - 'skills/**'
+      - 'mcps/**'
+      - 'employees/**'
+      - 'connectors/**'
+      - 'pi-extensions/**'
+      - 'scripts/pack-resources.py'
       - 'addons/**'
       - 'addons/**/package.json'
   pull_request:
     paths:
+      - 'skills/**'
+      - 'mcps/**'
+      - 'employees/**'
+      - 'connectors/**'
+      - 'pi-extensions/**'
+      - 'scripts/pack-resources.py'
+      - 'scripts/test_pack_resources.py'
       - '.github/workflows/build.yml'
       - 'addons/**'
       - 'tests/addon-e2e/**'
@@ -47,6 +60,10 @@ jobs:
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
           bun-version: ${{ steps.bun-version.outputs.version }}
+      - name: Validate standalone resource packaging
+        run: |
+          python3 -m unittest discover -s scripts -p test_pack_resources.py
+          python3 scripts/pack-resources.py
       - name: Install add-on repository dependencies
         run: bun install --frozen-lockfile
       - name: Detect add-on UX tests
@@ -150,22 +167,36 @@ jobs:
         if: always() && steps.addon_tests.outputs.present == 'true'
         run: kill $SERVER_PID 2>/dev/null || true
       - name: Install social-card renderer
-        if: always() && github.event_name != 'pull_request'
+        if: success() && github.event_name != 'pull_request'
         run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+      - name: Restore immutable resources from the published branch
+        if: success() && github.event_name != 'pull_request'
+        run: |
+          git fetch origin gh-pages:refs/remotes/origin/gh-pages
+          mkdir -p docs/packages
+          git ls-tree -r --name-only origin/gh-pages packages/ | while IFS= read -r path; do
+            case "$path" in
+              packages/haiqiai-*.tgz|packages/haiqiai-*.jpg)
+                git show "origin/gh-pages:$path" > "docs/$path"
+                ;;
+            esac
+          done
       - name: Build site and package tarballs
-        if: always() && github.event_name != 'pull_request'
+        if: success() && github.event_name != 'pull_request'
         run: bun run build.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
       - name: Verify all public tarballs were built
-        if: always() && github.event_name != 'pull_request'
-        run: test "$(find docs/packages -maxdepth 1 -name 'qiushuiai-addon-*.tgz' | wc -l | tr -d ' ')" = "5"
+        if: success() && github.event_name != 'pull_request'
+        run: |
+          bun -e 'import {existsSync} from "node:fs"; const catalog=await Bun.file("catalog.json").json(); for(const addon of catalog.addons){const name=addon.name.replace(/^@[^/]+\//, ""); if(!existsSync(`docs/packages/${name}-${addon.version}.tgz`)) throw Error(`Missing ${addon.slug}`);}'
+          python3 scripts/pack-resources.py
       - name: Copy assets into docs
-        if: always() && github.event_name != 'pull_request'
+        if: success() && github.event_name != 'pull_request'
         run: mkdir -p docs/assets && cp -r assets/* docs/assets/
       - name: Deploy to GitHub Pages
-        if: always() && github.event_name != 'pull_request'
+        if: success() && github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,20 @@
+{
+  "name": "@haiqiai/media-platforms",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "Bailian, Volcengine and CLIProxyAPI media extensions",
+  "exports": {
+    "./platforms": "./index.ts",
+    "./contracts": "./contracts.js"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/bailian.ts",
+      "./extensions/volcengine.ts",
+      "./extensions/cliproxyapi.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "^1.5.0"
+  }
+}

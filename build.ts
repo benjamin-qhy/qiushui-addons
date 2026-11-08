@@ -58,9 +58,18 @@ const catalog: Catalog = JSON.parse(readFileSync(CATALOG, "utf8"));
 const addons  = catalog.addons;
 
 // Generated plugin pages and packages must not keep removed plugins installable.
-for (const directory of ["addons", "packages", "assets/og"]) {
+for (const directory of ["addons", "assets/og"]) {
   rmSync(join(OUT, directory), { recursive: true, force: true });
   mkdirSync(join(OUT, directory), { recursive: true });
+}
+// Curated URLs are immutable. Retain their historical bytes for the packer's
+// comparison and for catalogs cached by older clients. Only legacy packages
+// follow the current catalog's replacement policy.
+mkdirSync(join(OUT, "packages"), { recursive: true });
+for (const name of readdirSync(join(OUT, "packages"))) {
+  if (!/^haiqiai-[a-z0-9.-]+\.(tgz|jpg)$/.test(name)) {
+    rmSync(join(OUT, "packages", name), { recursive: true, force: true });
+  }
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -806,6 +815,9 @@ for (const addon of addons) {
   } finally { prepared.dispose(); }
   console.log(`✓ packed ${addon.name}@${addon.version}`);
 }
+
+const resources = Bun.spawnSync(["python3", join(ROOT, "scripts/pack-resources.py")], {cwd:ROOT, stdout:"inherit", stderr:"inherit"});
+if (resources.exitCode !== 0) throw new Error("Resource packaging failed");
 
 // ── Packages index page ───────────────────────────────────────────────────────
 const pkgsHtml = `<!DOCTYPE html>

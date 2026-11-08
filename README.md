@@ -63,7 +63,7 @@ bun add https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon
 
 ## 可用插件
 
-当前仅保留以下 6 个插件，其余插件已从本仓库工作版本移除。
+当前维护以下 7 个 Add-on；其他分类资源见 RESOURCE-LAYOUT.md，未恢复已移除插件。
 
 | 插件 | 技术标识 | 说明 |
 |---|---|---|
@@ -72,6 +72,7 @@ bun add https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon
 | [插件示例](addons/sample-addon/) | `sample-addon` | 展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板 |
 | [客户工单助手（示例）](addons/customer-support-demo/) | `customer-support-demo` | 用真实聊天与工单工作台，演示工具、Skill、设置、KV、Keychain 和 Runtime；附验收记录 |
 | [设置截图](addons/settings-dialog-screenshot/) | `settings-dialog-screenshot` | 用于截取 Pi Web 设置对话框紧凑画面的开发技能 |
+| [客户工单（隔离实例）](addons/customer-support-isolated/) | `customer-support-isolated` | 工具与看板共享独立实例，数据按拥有者和版本隔离 |
 | [工作区反馈日志](addons/vent/) | `vent` | 将可配置的工作区反馈日志能力集成到 QiushuiAI |
 
 ---
@@ -92,3 +93,9 @@ bun add https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon
 ## 参与贡献
 
 如何添加新的附加组件、运行元数据检查和进行本地测试，请参阅 [AGENTS.md](AGENTS.md)。
+
+## 独立资源分类
+
+新增 Skills、MCP 配置、员工、Pi 扩展及连接器的存放和远程分发规则见 [RESOURCE-LAYOUT.md](RESOURCE-LAYOUT.md)。精选展示数据只维护在海奇AI网站；本仓库保存具体资源。
+
+新增独立分类与打包规范见 [RESOURCE-LAYOUT.md](RESOURCE-LAYOUT.md)。目录同步必须保留顶层 skills 源码；客户工单隔离实例使用 pi.isolation 入口，和传统 Pi 扩展分别维护。

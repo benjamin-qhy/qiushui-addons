@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1a96e-64a7-7000-85a9-c230bba991eb",
+  "name": "品佩",
+  "role": "品牌管理",
+  "description": "品牌定位、受众洞察、品牌表达与视觉一致性",
+  "storage_slug": "pin-pei",
+  "status": "enabled",
+  "is_default": 0,
+  "avatar": "avatar.jpg",
+  "created_at": "2026-11-05T01:59:06.663Z",
+  "updated_at": "2026-11-05T01:59:06.663Z",
+  "suggestedTasks": [
+    "请品佩帮我处理品牌定位"
+  ]
+}

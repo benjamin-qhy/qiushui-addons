@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "kind": "connectors",
+  "id": "feishu-docs",
+  "version": "1.0.1"
+}

@@ -25,6 +25,7 @@ interface AddonPackage extends QiushuiAIAddonManifest {
   main?: string;
   peerDependencies?: Record<string, string>;
   pi?: {
+    isolation?: { version?: number; entry?: string };
     extensions?: string[];
     skills?: string[];
     prompts?: string[];
@@ -55,7 +56,6 @@ const addonsDir = join(repoRoot, 'addons');
 const rootPackagePath = join(repoRoot, 'package.json');
 const catalogPath = join(repoRoot, 'catalog.json');
 const extensionsDir = join(repoRoot, 'extensions');
-const skillsDir = join(repoRoot, 'skills');
 const writeMode = process.argv.includes('--write');
 const checkMode = process.argv.includes('--check');
 
@@ -153,7 +153,7 @@ async function buildMetadata() {
     if (!pkg.name) throw new Error(`addons/${slug}/package.json: missing name`);
     if (!pkg.version) throw new Error(`addons/${slug}/package.json: missing version`);
     if (!pkg.description) throw new Error(`addons/${slug}/package.json: missing description`);
-    if (!pkg.pi?.extensions?.length && !pkg.pi?.skills?.length) throw new Error(`addons/${slug}/package.json: missing pi.extensions or pi.skills — addon must declare at least one`);
+    if (!pkg.pi?.extensions?.length && !pkg.pi?.skills?.length && !(pkg.pi?.isolation?.version === 1 && pkg.pi.isolation.entry && existsSync(join(addonRoot, pkg.pi.isolation.entry)))) throw new Error(`addons/${slug}/package.json: missing extension, skill or isolated instance entry`);
     const kws = pkg.keywords || [];
     if (!kws.includes('pi-package') && !kws.includes('qiushuiai-addon')) {
       throw new Error(`addons/${slug}/package.json: keywords must include "pi-package" or "qiushuiai-addon"`);
@@ -257,10 +257,6 @@ async function main() {
     if (existsSync(extensionsDir)) {
       await rm(extensionsDir, { recursive: true, force: true });
       changed.push('extensions/');
-    }
-    if (existsSync(skillsDir)) {
-      await rm(skillsDir, { recursive: true, force: true });
-      changed.push('skills/');
     }
   }
 

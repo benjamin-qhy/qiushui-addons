@@ -37,7 +37,7 @@ jobs:
         run: bun run audit:brand
 
       - name: Test catalog v3 identity contract
-        run: bun test scripts/lib/qiushuiai-addon-identity.test.ts
+        run: bun test scripts/lib/qiushuiai-addon-identity.test.ts scripts/catalog-preserves-resources.test.ts scripts/media-platforms.test.ts scripts/feishu-profile.test.ts scripts/customer-support-isolated.test.ts
 
       - name: Type-check Earendil compatibility surface
         run: bun run typecheck:earendil-compat
