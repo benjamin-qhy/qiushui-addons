@@ -55,7 +55,8 @@
       "install": {
         "kind": "tarball",
         "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-customer-support-isolated-1.0.2.tgz"
-      }
+      },
+      "updatedAt": "2026-11-08"
     },
     {
       "slug": "export-timeline-pdf",
@@ -219,7 +220,7 @@
         "kind": "tarball",
         "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-vent-0.1.8.tgz"
       },
-      "updatedAt": "2026-11-05"
+      "updatedAt": "2026-11-08"
     }
   ]
 }
