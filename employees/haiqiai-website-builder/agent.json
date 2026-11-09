@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1e000-0000-7000-8000-000000000010",
+  "storage_slug": "haiqiai-website-builder",
+  "name": "网站搭建",
+  "role": "网站搭建",
+  "description": "创建和修改网站，整理店铺商品、库存、订单资料与转化优化方案。",
+  "status": "enabled",
+  "is_default": 0,
+  "suggestedTasks": [
+    "制作企业介绍网站",
+    "分析店铺订单与库存异常",
+    "制作商品详情页"
+  ],
+  "created_at": "2026-11-09T00:00:00.000Z",
+  "updated_at": "2026-11-09T00:00:00.000Z",
+  "avatar": "avatar.webp"
+}

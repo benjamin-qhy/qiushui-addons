@@ -176,7 +176,7 @@ jobs:
           mkdir -p docs/packages
           git ls-tree -r --name-only origin/gh-pages packages/ | while IFS= read -r path; do
             case "$path" in
-              packages/haiqiai-*.tgz|packages/haiqiai-*.jpg)
+              packages/haiqiai-*.tgz|packages/haiqiai-*.jpg|packages/haiqiai-*.png|packages/haiqiai-*.webp)
                 git show "origin/gh-pages:$path" > "docs/$path"
                 ;;
             esac

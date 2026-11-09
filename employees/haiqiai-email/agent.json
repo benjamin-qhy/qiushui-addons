@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1e000-0000-7000-8000-000000000004",
+  "storage_slug": "haiqiai-email",
+  "name": "邮件助理",
+  "role": "邮件助理",
+  "description": "分类邮件、起草回复与营销序列，整理客户跟进、客服模板和反馈。",
+  "status": "enabled",
+  "is_default": 0,
+  "suggestedTasks": [
+    "整理邮件并起草重点回复",
+    "制作客户邮件跟进序列",
+    "整理客服回复模板"
+  ],
+  "created_at": "2026-11-09T00:00:00.000Z",
+  "updated_at": "2026-11-09T00:00:00.000Z",
+  "avatar": "avatar.webp"
+}

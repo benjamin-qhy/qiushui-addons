@@ -1,0 +1,4 @@
+interface:
+  display_name: "招聘助理业务流程"
+  short_description: "整理招聘需求、候选人和面试流程，制作外包招聘、求职及合作招募材料。"
+  default_prompt: "请使用 $haiqiai-recruiting 整理岗位需求与候选人对比。"

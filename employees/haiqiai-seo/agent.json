@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1e000-0000-7000-8000-000000000009",
+  "storage_slug": "haiqiai-seo",
+  "name": "搜索优化",
+  "role": "搜索优化",
+  "description": "审核网站与商品内容，规划搜索内容，整理商家资料、评价和反链分析。",
+  "status": "enabled",
+  "is_default": 0,
+  "suggestedTasks": [
+    "审核网站并制定SEO改进清单",
+    "规划中文搜索内容",
+    "整理商家资料更新草稿"
+  ],
+  "created_at": "2026-11-09T00:00:00.000Z",
+  "updated_at": "2026-11-09T00:00:00.000Z",
+  "avatar": "avatar.webp"
+}

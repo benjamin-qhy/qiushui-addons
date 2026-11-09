@@ -18,7 +18,7 @@ def package(directory, kind):
     slug, version = manifest['id'], manifest['version']
     if manifest.get('schemaVersion') != 1 or manifest.get('kind') != kind or slug != directory.name or not SLUG.fullmatch(slug) or not VERSION.fullmatch(version):
         raise ValueError(f'Invalid resource manifest: {directory}')
-    required = {'addons': ['package.json', 'LICENSE', 'SOURCE.md'], 'skills': ['SKILL.md', 'LICENSE', 'SOURCE.md'], 'employees': ['agent.json', 'AGENTS.md', 'capabilities.json', 'avatar.jpg'], 'pi-extensions': ['package.json', 'LICENSE', 'SOURCE.md'], 'connectors': ['package.json', 'LICENSE', 'SOURCE.md'], 'mcps': ['mcp.json', 'README.md']}[kind]
+    required = {'addons': ['package.json', 'LICENSE', 'SOURCE.md'], 'skills': ['SKILL.md', 'LICENSE', 'SOURCE.md'], 'employees': ['agent.json', 'AGENTS.md', 'capabilities.json'], 'pi-extensions': ['package.json', 'LICENSE', 'SOURCE.md'], 'connectors': ['package.json', 'LICENSE', 'SOURCE.md'], 'mcps': ['mcp.json', 'README.md']}[kind]
     for name in required:
         if not (directory / name).is_file():
             raise ValueError(f'Missing required file: {directory / name}')
@@ -27,8 +27,10 @@ def package(directory, kind):
         if policy.get('localApprovals'):
             raise ValueError('Employee package must not contain local approvals')
         agent = json.loads((directory / 'agent.json').read_text())
-        if agent.get('storage_slug') != slug or agent.get('avatar') != 'avatar.jpg':
+        if agent.get('storage_slug') != slug or agent.get('avatar') not in ('avatar.jpg', 'avatar.png', 'avatar.webp'):
             raise ValueError('Employee identity/avatar mismatch')
+        if not (directory / agent['avatar']).is_file():
+            raise ValueError('Missing employee avatar')
     files = []
     total = 0
     for path in sorted(directory.rglob('*')):
@@ -72,7 +74,9 @@ def build(root, output):
     for directory in sorted((root / 'employees').iterdir()) if (root / 'employees').exists() else []:
         if directory.is_dir():
             manifest = json.loads((directory / 'resource.json').read_text())
-            pending.append((f"haiqiai-employees-{manifest['id']}-{manifest['version']}-avatar.jpg", (directory / 'avatar.jpg').read_bytes()))
+            agent = json.loads((directory / "agent.json").read_text())
+            avatar = directory / agent["avatar"]
+            pending.append((f"haiqiai-employees-{manifest['id']}-{manifest['version']}-avatar{avatar.suffix}", avatar.read_bytes()))
     for name, data in pending:
         target = output / name
         if target.exists() and target.read_bytes() != data:

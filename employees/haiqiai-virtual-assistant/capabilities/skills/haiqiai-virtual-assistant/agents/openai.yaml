@@ -1,0 +1,4 @@
+interface:
+  display_name: "行政助理业务流程"
+  short_description: "整理日程、任务、团队简报与知识资料，检查冲突、依赖和截止日期。"
+  default_prompt: "请使用 $haiqiai-virtual-assistant 整理本周待办与排程。"

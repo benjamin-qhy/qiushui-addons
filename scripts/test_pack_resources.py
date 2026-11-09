@@ -59,6 +59,24 @@ class ResourcePackaging(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'immutable'):
             module.build(self.root, output)
 
+    def test_employee_webp_avatar(self):
+        employee = self.root / 'employees' / 'example'
+        employee.mkdir(parents=True)
+        for name, value in {
+            'resource.json': {'schemaVersion': 1, 'kind': 'employees', 'id': 'example', 'version': '1.0.0'},
+            'agent.json': {'storage_slug': 'example', 'avatar': 'avatar.webp'},
+            'capabilities.json': {'localApprovals': []},
+        }.items():
+            (employee / name).write_text(json.dumps(value))
+        (employee / 'AGENTS.md').write_text('Employee instructions')
+        (employee / 'avatar.webp').write_bytes(b'webp-fixture')
+        output = self.root / 'output'
+        module.build(self.root, output)
+        self.assertEqual((output / 'haiqiai-employees-example-1.0.0-avatar.webp').read_bytes(), b'webp-fixture')
+        (employee / 'agent.json').write_text(json.dumps({'storage_slug': 'example', 'avatar': '../outside.webp'}))
+        with self.assertRaisesRegex(ValueError, 'identity/avatar'):
+            module.build(self.root, output)
+
     def test_requires_license(self):
         (self.skill / 'LICENSE').unlink()
         with self.assertRaisesRegex(ValueError, 'Missing required'):

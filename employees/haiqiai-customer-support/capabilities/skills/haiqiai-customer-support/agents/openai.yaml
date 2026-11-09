@@ -1,0 +1,4 @@
+interface:
+  display_name: "客户服务业务流程"
+  short_description: "处理咨询与投诉，整理评论回复、客户案例、会前简报和会议纪要。"
+  default_prompt: "请使用 $haiqiai-customer-support 起草客户投诉回复。"

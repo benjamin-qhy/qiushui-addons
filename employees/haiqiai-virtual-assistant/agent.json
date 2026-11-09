@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1e000-0000-7000-8000-000000000003",
+  "storage_slug": "haiqiai-virtual-assistant",
+  "name": "行政助理",
+  "role": "行政助理",
+  "description": "整理日程、任务、团队简报与知识资料，检查冲突、依赖和截止日期。",
+  "status": "enabled",
+  "is_default": 0,
+  "suggestedTasks": [
+    "整理本周待办与排程",
+    "汇总团队工作进度",
+    "整理知识库更新清单"
+  ],
+  "created_at": "2026-11-09T00:00:00.000Z",
+  "updated_at": "2026-11-09T00:00:00.000Z",
+  "avatar": "avatar.webp"
+}

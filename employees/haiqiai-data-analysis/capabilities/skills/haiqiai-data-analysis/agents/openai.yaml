@@ -1,0 +1,4 @@
+interface:
+  display_name: "数据分析业务流程"
+  short_description: "分析经营、渠道、销售和财务数据，制作报表、异常清单与跟踪表。"
+  default_prompt: "请使用 $haiqiai-data-analysis 分析销售数据并生成报表。"

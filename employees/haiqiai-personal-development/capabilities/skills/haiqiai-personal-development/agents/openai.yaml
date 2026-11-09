@@ -1,0 +1,4 @@
+interface:
+  display_name: "成长教练业务流程"
+  short_description: "制定学习与个人成长计划，也按品牌资料制作图卡、商品视觉和设计方案。"
+  default_prompt: "请使用 $haiqiai-personal-development 制定四周学习计划。"

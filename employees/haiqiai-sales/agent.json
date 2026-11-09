@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "revision": 1,
+  "agent_id": "agent-01a1e000-0000-7000-8000-000000000007",
+  "storage_slug": "haiqiai-sales",
+  "name": "销售助理",
+  "role": "销售助理",
+  "description": "整理线索、报价与跟进，核对回款、账单、现金流和财务待办。",
+  "status": "enabled",
+  "is_default": 0,
+  "suggestedTasks": [
+    "整理销售机会与跟进计划",
+    "核对回款与待催收款项",
+    "整理现金流和账单提醒"
+  ],
+  "created_at": "2026-11-09T00:00:00.000Z",
+  "updated_at": "2026-11-09T00:00:00.000Z",
+  "avatar": "avatar.webp"
+}
