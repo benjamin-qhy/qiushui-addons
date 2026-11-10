@@ -25,10 +25,10 @@
     "template"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/benjamin-qhy/qiushuiai-addons/tree/main/addons/sample-addon",
+  "homepage": "https://github.com/benjamin-qhy/qiushui-addons/tree/main/addons/sample-addon",
   "repository": {
     "type": "git",
-    "url": "https://github.com/benjamin-qhy/qiushuiai-addons.git",
+    "url": "https://github.com/benjamin-qhy/qiushui-addons.git",
     "directory": "addons/sample-addon"
   },
   "qiushuiai": {

@@ -41,7 +41,7 @@ describe('QiushuiAI add-on identity', () => {
     } satisfies QiushuiAIAddonCatalog;
     expect(() => validateCatalog(catalog, 1)).not.toThrow();
     expect(entry.install.spec).toBe(
-      'https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-goal-0.1.49.tgz',
+      'https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-goal-0.1.49.tgz',
     );
   });
 });

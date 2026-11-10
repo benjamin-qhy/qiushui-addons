@@ -1,4 +1,0 @@
-interface:
-  display_name: "销售助理业务流程"
-  short_description: "整理线索、报价与跟进，核对回款、账单、现金流和财务待办。"
-  default_prompt: "请使用 $haiqiai-sales 整理销售机会与跟进计划。"

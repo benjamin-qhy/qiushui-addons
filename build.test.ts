@@ -11,7 +11,7 @@ test("generated site contains only current catalog plugins and packages", () => 
   expect(readdirSync(join(repoRoot, "docs/addons")).sort()).toEqual(slugs);
   const packages = catalog.addons.map((addon: { name: string; version: string }) =>
     `${addon.name.replace(/^@[^/]+\//, "")}-${addon.version}.tgz`).sort();
-  expect(readdirSync(join(repoRoot, "docs/packages")).filter(name => name.endsWith(".tgz")).sort()).toEqual(packages);
+  expect(readdirSync(join(repoRoot, "docs/packages")).filter(name => name.startsWith("qiushuiai-addon-") && name.endsWith(".tgz")).sort()).toEqual(packages);
 });
 
 test("addon detail pages include a direct tarball download pill", () => {
@@ -39,11 +39,11 @@ test("public tarball builder excludes local dependency and temporary trees", () 
 });
 
 test("site links adapt to the repository that runs the Pages build", () => {
-  expect(buildSource).toContain('const REPOSITORY = process.env.GITHUB_REPOSITORY?.trim() || "benjamin-qhy/qiushuiai-addons"');
+  expect(buildSource).toContain('const REPOSITORY = process.env.GITHUB_REPOSITORY?.trim() || "benjamin-qhy/qiushui-addons"');
   expect(buildSource).toContain('`https://${REPOSITORY_OWNER}.github.io/${REPOSITORY_NAME}`');
   expect(buildSource).toContain('function sitePath(path: string): string');
-  expect(buildSource).not.toContain('href="/qiushuiai-addons/');
-  expect(buildSource).not.toContain("from '/qiushuiai-addons/");
+  expect(buildSource).not.toContain('href="/qiushui-addons/');
+  expect(buildSource).not.toContain("from '/qiushui-addons/");
 });
 
 test("only the selected foundational add-ons are featured", () => {

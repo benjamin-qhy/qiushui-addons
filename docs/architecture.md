@@ -15,7 +15,7 @@
   "compatibleVersions": ">=3.0.0",
   "install": {
     "kind": "tarball",
-    "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-proxmox-0.1.11.tgz"
+    "spec": "https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-proxmox-0.1.11.tgz"
   }
 }
 ```

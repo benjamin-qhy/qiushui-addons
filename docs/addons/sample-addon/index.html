@@ -7,27 +7,27 @@
 <meta name="description" content="展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板">
 <meta property="og:title" content="插件示例 — QiushuiAI 插件中心">
 <meta property="og:description" content="展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板">
-<meta property="og:url" content="https://benjamin-qhy.github.io/qiushuiai-addons/addons/sample-addon/">
-<meta property="og:image" content="https://benjamin-qhy.github.io/qiushuiai-addons/assets/og/sample-addon.png">
+<meta property="og:url" content="https://benjamin-qhy.github.io/qiushui-addons/addons/sample-addon/">
+<meta property="og:image" content="https://benjamin-qhy.github.io/qiushui-addons/assets/og/sample-addon.png">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="640">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="插件示例 — QiushuiAI 插件中心">
 <meta name="twitter:description" content="展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板">
-<meta name="twitter:image" content="https://benjamin-qhy.github.io/qiushuiai-addons/assets/og/sample-addon.png">
-<link rel="canonical" href="https://benjamin-qhy.github.io/qiushuiai-addons/addons/sample-addon/">
+<meta name="twitter:image" content="https://benjamin-qhy.github.io/qiushui-addons/assets/og/sample-addon.png">
+<link rel="canonical" href="https://benjamin-qhy.github.io/qiushui-addons/addons/sample-addon/">
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wipi60y9s3");
 </script>
 <style>
-@font-face{font-family:'IBM Plex Sans';src:url('/qiushuiai-addons/assets/fonts/ibm-plex-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'IBM Plex Sans';src:url('/qiushuiai-addons/assets/fonts/ibm-plex-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
-@font-face{font-family:'IBM Plex Sans';src:url('/qiushuiai-addons/assets/fonts/ibm-plex-sans-600.woff2') format('woff2');font-weight:600;font-display:swap}
-@font-face{font-family:'IBM Plex Sans';src:url('/qiushuiai-addons/assets/fonts/ibm-plex-sans-700.woff2') format('woff2');font-weight:700;font-display:swap}
-@font-face{font-family:'Inter';src:url('/qiushuiai-addons/assets/fonts/inter-var.woff2') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'JetBrains Mono';src:url('/qiushuiai-addons/assets/fonts/jetbrains-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'JetBrains Mono';src:url('/qiushuiai-addons/assets/fonts/jetbrains-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url('/qiushui-addons/assets/fonts/ibm-plex-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url('/qiushui-addons/assets/fonts/ibm-plex-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url('/qiushui-addons/assets/fonts/ibm-plex-sans-600.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'IBM Plex Sans';src:url('/qiushui-addons/assets/fonts/ibm-plex-sans-700.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Inter';src:url('/qiushui-addons/assets/fonts/inter-var.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url('/qiushui-addons/assets/fonts/jetbrains-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url('/qiushui-addons/assets/fonts/jetbrains-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#f0f4ff;--ink:#0f1c2e;--ink-dim:rgba(15,28,46,.6);
@@ -216,12 +216,12 @@ footer a{color:var(--accent);text-decoration:none}
 <body>
 
 <nav class="detail-nav">
-  <a href="/qiushuiai-addons/" class="back">← 返回全部插件</a>
+  <a href="/qiushui-addons/" class="back">← 返回全部插件</a>
 </nav>
 
 <div class="detail-hero">
   <div class="detail-hero-inner">
-    <img class="detail-icon" src="/qiushuiai-addons/assets/icons/default-01.png" alt="">
+    <img class="detail-icon" src="/qiushui-addons/assets/icons/default-01.png" alt="">
     <div>
       <div class="detail-title-row">
         <div class="detail-title">插件示例</div>
@@ -233,7 +233,7 @@ footer a{color:var(--accent);text-decoration:none}
       <div class="detail-tags"><span class="badge">开发工具</span><span class="badge">模板</span><span class="badge">示例</span></div>
       <div class="detail-meta">
         <span class="detail-version">v0.1.14</span>
-        <a class="download-pill" href="https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-addon-0.1.14.tgz" download aria-label="下载 插件示例 0.1.14 安装包">↓ 下载 .tgz</a>
+        <a class="download-pill" href="https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-sample-addon-0.1.14.tgz" download aria-label="下载 插件示例 0.1.14 安装包">↓ 下载 .tgz</a>
 
 
       </div>
@@ -248,7 +248,7 @@ footer a{color:var(--accent);text-decoration:none}
   </div>
   <div class="install-block source-block">
     <svg class="install-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-    <span class="install-text"><strong>源代码：</strong><a href="https://github.com/benjamin-qhy/qiushuiai-addons/tree/main/addons/sample-addon" target="_blank" rel="noopener">addons/sample-addon</a></span>
+    <span class="install-text"><strong>源代码：</strong><a href="https://github.com/benjamin-qhy/qiushui-addons/tree/main/addons/sample-addon" target="_blank" rel="noopener">addons/sample-addon</a></span>
   </div>
 
   <p>展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板</p>
@@ -260,24 +260,24 @@ footer a{color:var(--accent);text-decoration:none}
 <li>展示标签：<code>示例</code>、<code>模板</code>、<code>开发工具</code></li>
 </ul>
 <h2>安装</h2><p>在 QiushuiAI 中打开<strong>设置 → 插件</strong>，搜索“插件示例”并安装。也可以直接使用无需登录的公开安装包：</p>
-<div class="addon-code-block"><div class="addon-code-block-header"><span class="addon-code-lang">text</span><button type="button" class="addon-code-copy-btn" aria-label="复制代码" title="复制代码" data-copy-state="idle"><span class="addon-code-copy-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="10" height="10" rx="2"></rect><path d="M7 15H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1"></path></svg></span><span class="addon-code-copy-label">复制</span></button></div><pre><code>https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-addon-0.1.13.tgz</code></pre></div><p>安装或更新后，请按 QiushuiAI 的提示重新加载相关运行时入口。</p>
+<div class="addon-code-block"><div class="addon-code-block-header"><span class="addon-code-lang">text</span><button type="button" class="addon-code-copy-btn" aria-label="复制代码" title="复制代码" data-copy-state="idle"><span class="addon-code-copy-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="10" height="10" rx="2"></rect><path d="M7 15H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1"></path></svg></span><span class="addon-code-copy-label">复制</span></button></div><pre><code>https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-sample-addon-0.1.13.tgz</code></pre></div><p>安装或更新后，请按 QiushuiAI 的提示重新加载相关运行时入口。</p>
 <h2>提供的能力</h2><ul>
 <li>入口：<code>index.ts</code></li>
 <li>入口：<code>web/index.tsx</code>（React + shadcn）</li>
 </ul>
 <h2>配置与安全</h2><p>请优先通过插件设置面板完成配置。普通配置由插件配置接口保存；令牌、密码等敏感信息应存入 QiushuiAI 密钥链。不要把真实凭据写进工作区文件、日志或版本库。</p>
-<h2>技术资料</h2><p>完整的原始技术说明、配置示例和故障排查资料保存在 <a href="https://github.com/benjamin-qhy/qiushuiai-addons/blob/main/addons/sample-addon/README.en.md" target="_blank" rel="noopener">英文技术资料</a>。代码中的工具名、参数名、接口路径和第三方品牌保留原始技术名称。</p>
+<h2>技术资料</h2><p>完整的原始技术说明、配置示例和故障排查资料保存在 <a href="https://github.com/benjamin-qhy/qiushui-addons/blob/main/addons/sample-addon/README.en.md" target="_blank" rel="noopener">英文技术资料</a>。代码中的工具名、参数名、接口路径和第三方品牌保留原始技术名称。</p>
 
 </div>
 
 
 <footer>
-  <div class="footer-links"><a href="/qiushuiai-addons/">QiushuiAI 插件中心</a> &nbsp;·&nbsp;
-  <a href="https://github.com/benjamin-qhy/qiushuiai-addons/tree/main/addons/sample-addon">查看源代码</a></div>
+  <div class="footer-links"><a href="/qiushui-addons/">QiushuiAI 插件中心</a> &nbsp;·&nbsp;
+  <a href="https://github.com/benjamin-qhy/qiushui-addons/tree/main/addons/sample-addon">查看源代码</a></div>
   <div class="footer-note">QiushuiAI 与 <a href="https://pi.dev" target="_blank" rel="noopener">pi.dev</a> 无隶属关系；插件保留对 Pi 技术协议的兼容。</div>
 </footer>
 <script type="module">
-  import { mountDetail } from '/qiushuiai-addons/assets/js/addon-island.mjs';
+  import { mountDetail } from '/qiushui-addons/assets/js/addon-island.mjs';
   mountDetail('sample-addon');
 </script>
 </body>

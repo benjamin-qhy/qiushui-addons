@@ -1,4 +1,0 @@
-interface:
-  display_name: "业务发展业务流程"
-  short_description: "研究市场、竞品与业务机会，设计增长试验，整理招标和资助申请资料。"
-  default_prompt: "请使用 $haiqiai-business-development 制定两周获客试验。"

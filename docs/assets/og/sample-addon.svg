@@ -31,6 +31,6 @@
     <text x="468" y="200" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1.5" fill="#2563eb">开发工具</text>
     <text x="468" y="275" font-family="Inter,system-ui,sans-serif" font-size="60" font-weight="700" fill="#0f172a">插件示例</text>
     <text x="468" y="342" font-family="Inter,system-ui,sans-serif" font-size="34" fill="#334155">展示设置面板、钥匙串密钥、KV 配置和测试端点的插件开发模板</text>
-    <text x="1176" y="532" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="600" fill="#64748b">benjamin-qhy.github.io/qiushuiai-addons</text>
+    <text x="1176" y="532" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="600" fill="#64748b">benjamin-qhy.github.io/qiushui-addons</text>
   </g>
 </svg>

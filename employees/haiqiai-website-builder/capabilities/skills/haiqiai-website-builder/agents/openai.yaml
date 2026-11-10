@@ -1,4 +1,0 @@
-interface:
-  display_name: "网站搭建业务流程"
-  short_description: "创建和修改网站，整理店铺商品、库存、订单资料与转化优化方案。"
-  default_prompt: "请使用 $haiqiai-website-builder 制作企业介绍网站。"

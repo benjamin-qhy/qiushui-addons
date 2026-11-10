@@ -33,6 +33,6 @@
     <text x="468" y="342" font-family="Inter,system-ui,sans-serif" font-size="34" fill="#334155">通过 OpenTelemetry 将错误和智能体轮次追踪到</text>
     <text x="468" y="390" font-family="Inter,system-ui,sans-serif" font-size="34" fill="#334155">Azure Application Insights 和本地</text>
     <text x="468" y="438" font-family="Inter,system-ui,sans-serif" font-size="34" fill="#334155">Graphite</text>
-    <text x="1176" y="532" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="600" fill="#64748b">benjamin-qhy.github.io/qiushuiai-addons</text>
+    <text x="1176" y="532" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="600" fill="#64748b">benjamin-qhy.github.io/qiushui-addons</text>
   </g>
 </svg>

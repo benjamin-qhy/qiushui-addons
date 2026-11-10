@@ -1,8 +1,8 @@
 export const QIUSHUIAI_ADDON_SCOPE = '@qiushuiai';
 export const QIUSHUIAI_ADDON_PREFIX = 'qiushuiai-addon-';
 export const QIUSHUIAI_ADDON_PACKAGE_PATTERN = /^@qiushuiai\/qiushuiai-addon-([a-z0-9][a-z0-9._-]{0,63})$/;
-export const QIUSHUIAI_ADDON_SITE_URL = 'https://benjamin-qhy.github.io/qiushuiai-addons';
-export const QIUSHUIAI_ADDON_SOURCE = 'github:benjamin-qhy/qiushuiai-addons';
+export const QIUSHUIAI_ADDON_SITE_URL = 'https://benjamin-qhy.github.io/qiushui-addons';
+export const QIUSHUIAI_ADDON_SOURCE = 'github:benjamin-qhy/qiushui-addons';
 export const QIUSHUIAI_ADDON_COMPATIBILITY = '>=3.0.0';
 
 export interface QiushuiAIAddonManifest {

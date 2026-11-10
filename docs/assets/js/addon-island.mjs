@@ -1,18 +1,18 @@
 /**
- * addon-island.mjs — live GitHub issue counts for qiushuiai-addons
+ * addon-island.mjs — live GitHub issue counts for qiushui-addons
  *
  * 仅使用原生 JavaScript，并复用站点的缓存与请求模式。
- * Fetches open issues for benjamin-qhy/qiushuiai-addons once per session,
+ * Fetches open issues for benjamin-qhy/qiushui-addons once per session,
  * groups them by addon:<slug> labels, then:
  *   - Swaps card/detail icons to default-05.png for addons with open issues
  *   - Shows an issue-count badge on affected cards and detail pages
  */
 
-const REPO        = 'benjamin-qhy/qiushuiai-addons';
+const REPO        = 'benjamin-qhy/qiushui-addons';
 const API_BASE    = 'https://api.github.com';
-const CACHE_KEY   = 'qiushuiai_addons_issues';
+const CACHE_KEY   = 'qiushui_addons_issues';
 const CACHE_TTL   = 15 * 60 * 1000;  // 15 min
-const ICON_PREFIX = '/qiushuiai-addons/assets/icons/';
+const ICON_PREFIX = '/qiushui-addons/assets/icons/';
 const ALERT_ICON  = `${ICON_PREFIX}default-05.png`;
 const CODE_COPY_RESET_MS = 1800;
 const COPY_ICON_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="10" height="10" rx="2"></rect><path d="M7 15H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1"></path></svg>';
