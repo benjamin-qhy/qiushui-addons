@@ -351,7 +351,7 @@ bun run check:catalog   # 只验证（不同步时以状态码 1 退出）
 - 技能应放在 `skills/<name>/SKILL.md` 中
 - 每次功能变更都必须提升版本号
 - 每次编辑 `package.json` 后都要运行 `sync:catalog`
-- 第一方附加组件的目录安装条目必须保持 `kind: "tarball"`，并使用公开的 `https://benjamin-qhy.github.io/qiushuiai-addons/packages/...tgz` URL
+- 第一方附加组件的目录安装条目必须保持 `kind: "tarball"`，并使用公开的 `https://benjamin-qhy.github.io/qiushui-addons/packages/...tgz` URL
 
 ## Git 工作流
 

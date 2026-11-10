@@ -1,4 +1,0 @@
-interface:
-  display_name: "邮件助理业务流程"
-  short_description: "分类邮件、起草回复与营销序列，整理客户跟进、客服模板和反馈。"
-  default_prompt: "请使用 $haiqiai-email 整理邮件并起草重点回复。"

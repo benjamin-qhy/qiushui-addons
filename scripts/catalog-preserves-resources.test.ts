@@ -13,7 +13,7 @@ test('catalog synchronization preserves independently maintained skills',async()
   writeFileSync(join(addon,'index.ts'),'export default function(){}');
   writeFileSync(join(addon,'package.json'),JSON.stringify({name:'@qiushuiai/qiushuiai-addon-probe',version:'1.0.0',description:'测试插件',keywords:['pi-package'],pi:{extensions:['index.ts']},qiushuiai:{displayName:'测试插件',type:'extension',compatibleVersions:'>=3.0.0',categories:['test'],displayTags:['测试'],featured:false}}));
   writeFileSync(join(root,'package.json'),JSON.stringify({name:'probe',version:'1.0.0'}));
-  writeFileSync(join(root,'catalog.json'),JSON.stringify({version:3,source:'github:benjamin-qhy/qiushuiai-addons',addons:[]}));
+  writeFileSync(join(root,'catalog.json'),JSON.stringify({version:3,source:'github:benjamin-qhy/qiushui-addons',addons:[]}));
   const skill=join(root,'skills','independent');mkdirSync(skill,{recursive:true});writeFileSync(join(skill,'SKILL.md'),'preserve source bytes');
   const processResult=Bun.spawn([process.execPath,join(root,'scripts/sync-catalog.ts'),'--write'],{cwd:root,stdout:'pipe',stderr:'pipe'});
   const err=await new Response(processResult.stderr).text();

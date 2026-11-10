@@ -16,7 +16,7 @@
 在 QiushuiAI 中打开**设置 → 插件**，搜索“设置截图”并安装。也可以直接使用无需登录的公开安装包：
 
 ```text
-https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-settings-dialog-screenshot-0.1.2.tgz
+https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-settings-dialog-screenshot-0.1.2.tgz
 ```
 
 安装或更新后，请按 QiushuiAI 的提示重新加载相关运行时入口。
@@ -33,4 +33,4 @@ https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-setting
 
 ## 技术资料
 
-完整的原始技术说明、配置示例和故障排查资料保存在 [英文技术资料](https://github.com/benjamin-qhy/qiushuiai-addons/blob/main/addons/settings-dialog-screenshot/README.en.md)。代码中的工具名、参数名、接口路径和第三方品牌保留原始技术名称。
+完整的原始技术说明、配置示例和故障排查资料保存在 [英文技术资料](https://github.com/benjamin-qhy/qiushui-addons/blob/main/addons/settings-dialog-screenshot/README.en.md)。代码中的工具名、参数名、接口路径和第三方品牌保留原始技术名称。

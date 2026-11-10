@@ -13,8 +13,8 @@ const ROOT    = dirname(Bun.main);
 const CATALOG = join(ROOT, "catalog.json");
 const OUT     = join(ROOT, "docs");  // GitHub Pages serves from /docs
 
-const REPOSITORY = process.env.GITHUB_REPOSITORY?.trim() || "benjamin-qhy/qiushuiai-addons";
-const [REPOSITORY_OWNER = "benjamin-qhy", REPOSITORY_NAME = "qiushuiai-addons"] = REPOSITORY.split("/");
+const REPOSITORY = process.env.GITHUB_REPOSITORY?.trim() || "benjamin-qhy/qiushui-addons";
+const [REPOSITORY_OWNER = "benjamin-qhy", REPOSITORY_NAME = "qiushui-addons"] = REPOSITORY.split("/");
 const REPOSITORY_URL = `https://github.com/${REPOSITORY_OWNER}/${REPOSITORY_NAME}`;
 const SITE_URL = (process.env.QIUSHUIAI_ADDONS_SITE_URL?.trim()
   || `https://${REPOSITORY_OWNER}.github.io/${REPOSITORY_NAME}`).replace(/\/$/, "");

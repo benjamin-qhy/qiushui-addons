@@ -1,4 +1,0 @@
-interface:
-  display_name: "社媒运营业务流程"
-  short_description: "为国内社媒制作内容、短视频脚本与活动计划，整理审批和发布安排。"
-  default_prompt: "请使用 $haiqiai-social-media 制作一周社媒内容计划。"

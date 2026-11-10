@@ -17,10 +17,10 @@
       "skills"
     ]
   },
-  "homepage": "https://github.com/benjamin-qhy/qiushuiai-addons/tree/main/addons/export-timeline-pdf",
+  "homepage": "https://github.com/benjamin-qhy/qiushui-addons/tree/main/addons/export-timeline-pdf",
   "repository": {
     "type": "git",
-    "url": "https://github.com/benjamin-qhy/qiushuiai-addons.git",
+    "url": "https://github.com/benjamin-qhy/qiushui-addons.git",
     "directory": "addons/export-timeline-pdf"
   },
   "qiushuiai": {

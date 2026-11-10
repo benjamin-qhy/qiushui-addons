@@ -1,4 +1,0 @@
-interface:
-  display_name: "文案策划业务流程"
-  short_description: "撰写营销、网站、广告和专业内容，制作课程、流程说明及翻译稿。"
-  default_prompt: "请使用 $haiqiai-copywriting 撰写产品介绍与落地页文案。"

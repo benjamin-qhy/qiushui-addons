@@ -1,4 +1,0 @@
-interface:
-  display_name: "搜索优化业务流程"
-  short_description: "审核网站与商品内容，规划搜索内容，整理商家资料、评价和反链分析。"
-  default_prompt: "请使用 $haiqiai-seo 审核网站并制定SEO改进清单。"

@@ -106,7 +106,7 @@ Catalog v3 是两个仓库之间唯一稳定的接口：
   "compatibleVersions": ">=3.0.0",
   "install": {
     "kind": "tarball",
-    "spec": "https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-goal-0.1.49.tgz"
+    "spec": "https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-goal-0.1.49.tgz"
   }
 }
 ```
@@ -116,7 +116,7 @@ Catalog 顶层：
 ```json
 {
   "version": 3,
-  "source": "github:benjamin-qhy/qiushuiai-addons",
+  "source": "github:benjamin-qhy/qiushui-addons",
   "addons": []
 }
 ```
@@ -182,7 +182,7 @@ validateCatalog(catalog)
 - 增加 `displayTags`。
 - 核心推荐插件增加 `featured: true`。
 - `compatibleVersions` 调整为 `>=3.0.0`。
-- 仓库、主页和问题地址切换到 `benjamin-qhy/qiushuiai-addons`。
+- 仓库、主页和问题地址切换到 `benjamin-qhy/qiushui-addons`。
 - 各插件提升一个补丁版本。
 - 根包改为 `@qiushuiai/qiushuiai-addons@3.0.0`。
 

@@ -23,9 +23,9 @@
     "addon:e2e:all": "cd tests/addon-e2e && QIUSHUIAI_ADDON=all bun run test -- --project=desktop-chrome",
     "addon:e2e:report": "cd tests/addon-e2e && bun run report"
   },
-  "homepage": "https://benjamin-qhy.github.io/qiushuiai-addons/",
+  "homepage": "https://benjamin-qhy.github.io/qiushui-addons/",
   "bugs": {
-    "url": "https://github.com/benjamin-qhy/qiushuiai-addons/issues"
+    "url": "https://github.com/benjamin-qhy/qiushui-addons/issues"
   },
   "pi": {
     "extensions": [
@@ -71,7 +71,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/benjamin-qhy/qiushuiai-addons.git"
+    "url": "https://github.com/benjamin-qhy/qiushui-addons.git"
   },
   "files": [
     "LICENSE",

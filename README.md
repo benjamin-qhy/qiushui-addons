@@ -1,6 +1,6 @@
 # QiushuiAI 插件
 
-面向 [QiushuiAI](https://github.com/benjamin-qhy/qiushuiai) 的官方扩展、技能和组件。完整目录请访问 **[QiushuiAI 插件中心](https://benjamin-qhy.github.io/qiushuiai-addons/)**。
+面向 [QiushuiAI](https://github.com/benjamin-qhy/qiushuiai) 的官方扩展、技能和组件。完整目录请访问 **[QiushuiAI 插件中心](https://benjamin-qhy.github.io/qiushui-addons/)**。
 
 仓库开发和软件包生成需要 Bun 1.4.0 或更高版本。Bun 1.3 无法读取第 2 版锁文件；如果将仓库工具链回退到 Bun 1.4 以下，还必须一并撤销锁文件迁移。
 
@@ -21,14 +21,14 @@
 ### `pi install`
 
 ```bash
-pi install https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-addon-0.1.12.tgz
+pi install https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-sample-addon-0.1.12.tgz
 ```
 
 ### `bun add`
 
 ```bash
 cd /workspace/.pi/extensions
-bun add https://benjamin-qhy.github.io/qiushuiai-addons/packages/qiushuiai-addon-sample-addon-0.1.12.tgz
+bun add https://benjamin-qhy.github.io/qiushui-addons/packages/qiushuiai-addon-sample-addon-0.1.12.tgz
 ```
 
 ---

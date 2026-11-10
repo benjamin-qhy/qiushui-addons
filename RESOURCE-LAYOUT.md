@@ -19,4 +19,4 @@ GitHub Pages 继续提供无需注册表认证的公开 tarball；不使用 GitH
 
 自动检查：`python3 -m unittest discover -s scripts -p test_pack_resources.py`。通过打包和自动检查不代表桌面实际安装使用通过。
 
-2026-11-09 新增12位国内业务员工 `employees/haiqiai-*/`，保留来源包身份与WebP头像；原6位员工及历史下载地址继续保留。当前展示由海奇官网精选目录决定。
+当前源码保留6位员工；2026-11-09 新增的12位国内业务员工 `employees/haiqiai-*/` 已从源码移除。已发布的历史下载地址仍按发布保留规则处理，当前展示由海奇官网精选目录决定。
